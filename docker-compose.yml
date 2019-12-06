@@ -28,6 +28,7 @@ services:
       - "3306:3306"
     volumes:
       - ./docker/db/my.cnf:/etc/my.cnf
+      - ./docker/db/data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${DATABASE_NAME}
