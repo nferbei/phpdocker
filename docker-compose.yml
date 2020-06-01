@@ -17,7 +17,7 @@ services:
         COMPOSER_VERSION: 1.9.1
     volumes:
       - ./:/var/www
-    working_dir: /var/www
+    working_dir: /var/www/src
     environment:
       - "XDEBUG_CONFIG=${XDEBUG_CONFIG}"
       - "COMPOSER_MEMORY_LIMIT=-1"
