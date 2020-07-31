@@ -15,8 +15,12 @@ services:
       context: ${PWD}/docker/fpm
       args:
         COMPOSER_VERSION: 1.9.1
+    user: $UID:$GID
     volumes:
       - ./:/var/www
+      - /etc/group:/etc/group:ro
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/shadow:/etc/shadow:ro
     working_dir: /var/www/src
     environment:
       - "XDEBUG_CONFIG=${XDEBUG_CONFIG}"
